@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Employee</title>
+
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
+	
+</head>
+<body>
+	
+	<div class="container">
+		
+		<h3 style="font-family: Times New Roman;">Employee Directory</h3>
+		<hr style="border: 5px solid grey;">
+		
+		<p class="h4 mb-4">Save Employee</p>
+		
+		<form action="#" th:action="@{/employees/save}"
+						th:object="${employee}" method="post"> <!-- # : blank action -->
+		
+		<!-- Add a hidden form field to handle the update -->
+		<input type="hidden" th:field="*{id}" />
+		
+		<input type="text" th:field="*{firstName}" 
+				class="form-control mb-4 col-4" placeholder="First Name">
+		
+		<input type="text" th:field="*{lastName}" 
+				class="form-control mb-4 col-4" placeholder="Last Name">
+		
+		<input type="text" th:field="*{email}" 
+				class="form-control mb-4 col-4" placeholder="Email">
+		
+		<button type="submit" class="btn btn-info col-2">Save</button>
+		
+		</form>
+	
+	<hr>
+	<a th:href="@{/employees/list}">Back to Employees list</a>	
+	</div>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
